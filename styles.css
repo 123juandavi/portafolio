@@ -169,7 +169,7 @@ p {
 
 .card {
  background-color: #2b3058;
-  margin: 10px; /* Aumenta el margen para separar las tarjetas */
+  margin: 10px; 
   width: 30%;
   transition: .3s;
   border: 1px solid #ccc;
@@ -439,17 +439,16 @@ input[type="submit"]:hover {
   }
   
   toggle-button {
-    display: none; /* Ocultar el botón en pantallas grandes */
+    display: none; 
     cursor: pointer;
   }
   
-  /* Estilos para el menú hamburguesa en pantallas pequeñas */
   .mobile-menu.active .menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 60px; /* Ajusta la posición según tus necesidades */
+    top: 60px; 
     right: 0;
     background-color: #191c32;
     width: 100%;
@@ -457,12 +456,12 @@ input[type="submit"]:hover {
     z-index: 1;
   }
   
-  /* Estilos para el botón de hamburguesa en pantallas pequeñas */
+  
   .mobile-menu.active .toggle-button .bar {
-    background-color: #fff; /* Cambia el color de las barras cuando se activa el botón */
+    background-color: #fff; 
   }
   
-  /* Estilos para el botón de hamburguesa */
+  
   .bar {
     width: 25px;
     height: 3px;
@@ -481,7 +480,7 @@ input[type="submit"]:hover {
     }
 
     .mobile-menu.active .menu {
-      top: 50px; /* Ajusta la posición según tus necesidades */
+      top: 50px; 
     }
   
 
