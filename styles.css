@@ -148,10 +148,10 @@ p {
 
 
 .portfolio, .contact-section {
-  width: 100vw;
   padding: 20px;
   background-color: #4b4b4b;
   color: #fff;
+  margin-bottom:30px;
 }
 
 
@@ -169,7 +169,6 @@ p {
 
 .portfolio .container {
   top: -20px;
-  width: 90%;
   height: auto;
   margin: 0 auto;
   display: flex;
@@ -253,7 +252,7 @@ p {
   font-size: 1.5em;
 }
 
-
+/* Estilo original para pantallas más grandes */
 .boxesProject {
   background-color: #191c32;
   width: 100%;
@@ -263,7 +262,6 @@ p {
   justify-content: center;
   gap: 3rem;
 }
-
 
 .boxProject {
   position: relative;
@@ -276,50 +274,55 @@ p {
   border: 1px solid #00ffff;
 }
 
-.boxProject figure img {
-  width: 400%;
-  height: 20rem;
-  transition: all 500ms ease-out;
-}
 
-.boxProject figure .capa {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  background: rgba(28, 46, 35, 0);
-  transition: all 500ms ease-out;
-  opacity: 0;
-  visibility: hidden;
-  text-align: center;
-}
+  .boxProject {
+      width: 100%; /* Ocupa el ancho completo */
+      height: auto;
+      position: relative;
+      margin: 1rem 0; /* Ajusta los márgenes verticalmente */
+      overflow: hidden;
+      border: none; /* Elimina el borde */
+  }
 
-.boxProject figure:hover > .capa {
-  opacity: 1;
-  visibility: visible;
-}
+  .boxProject figure {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+  }
 
-.boxProject figure:hover > .capa h3 {
-  margin-top: 50px;
-  margin-bottom: 15px;
-}
+  .boxProject figure img {
+      width: 100%;
+      height: auto; /* La imagen se ajustará automáticamente a su altura original */
+      object-fit: cover; /* Escala la imagen para cubrir todo el figure */
+      transition: all 500ms ease-out;
+  }
 
-.boxProject figure .capa h3 {
-  color: #fff;
-  font-weight: 400;
-  margin-bottom: 120px;
-  transition: all 500ms ease-out;
-  margin-top: 2px;
-  font-weight: bold;
-}
+  .boxProject figure .capa {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%; /* Ocupa todo el espacio del figure */
+      background: rgba(28, 46, 35, 0);
+      transition: all 500ms ease-out;
+      opacity: 0;
+      visibility: hidden;
+      text-align: center;
+  }
 
-.boxProject figure .capa p {
-  color: #fff;
-  font-size: 15px;
-  line-height: 1.5;
-  width: 100%;
-  margin: auto;
-  font-weight: bold;
-}
+  .boxProject figure:hover > .capa {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  .boxProject figure:hover > .capa h3 {
+      margin-top: 0; /* Restaura el margen superior */
+      margin-bottom: 15px;
+  }
+
+
 
 
 .container_form {
@@ -427,12 +430,11 @@ input[type="submit"]:hover {
 
 @media screen and (max-width: 768px) {
   .menu {
-    display: none; 
+    display: flex;
   }
-
+  
   .toggle-menu {
     background-image: url(img/amburger-menu);
-    display: block;
     background: none;
     border: none;
     font-size: 24px;
@@ -442,44 +444,42 @@ input[type="submit"]:hover {
     top: 1em;
     right: 1em;
   }
-
+  
   .toggle-menu:focus {
-    outline: none; 
+    outline: none;
   }
-
+  
   .menu.active {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 5em;
     right: 1em;
     background-color: #2b3058;
   }
-
+  
   .main {
     grid-template-columns: 1fr;
     text-align: center;
     margin: 2rem auto;
   }
-
+  
   .main img {
     width: 200px;
-    margin-left: 0;
     margin: 0 auto;
-    font-size: 14px; 
-    background-color: transparent;
+    font-size: 14px;
     background-image: url('img/jaundda.PNG');
     background-size: contain;
     background-position: center center;
   }
-
+  
   .portfolio-heading,
   .contact-heading {
     padding: 3em;
   }
   
   .toggle-button {
-    display: none; 
+    display: none;
     cursor: pointer;
   }
   
@@ -488,19 +488,17 @@ input[type="submit"]:hover {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 60px; 
+    top: 60px;
     right: 0;
-    background-color: #191c32;
+    background-color: red;
     width: 100%;
     text-align: center;
     z-index: 1;
   }
   
-  
   .mobile-menu.active .toggle-button .bar {
-    background-color: #fff; 
+    background-color: #fff;
   }
-  
   
   .bar {
     width: 25px;
@@ -508,74 +506,88 @@ input[type="submit"]:hover {
     background-color: #000;
     margin: 4px 0;
   }
-
-   
-    .menu {
-      display: none; 
-    }
-  
-    .toggle-button {
-      display: block; 
-      color: #00ffff;
-    }
-
-    .mobile-menu.active .menu {
-      top: 50px; 
-    }
-  
-
-  .conteiner_icon a i{
-    width: 3rem;
-    height: 3rem;
-  }
-  
-  .card-container-container-ico{
-
-  }
-  .p {
-    font-size: 12px;
-  }
   
   .card-container {
     display: flex;
     flex-direction: column; 
     align-items: center; 
-    margin: 1rem;
+   
+  }
+ 
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 calc(100% - 2rem);
+    border-radius: 2rem;
+    box-shadow: 0px 5px 15px black;
+    cursor: pointer;
+    border: 1px solid #00ffff;
+    padding: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 10px;
+  }
+  
+  .card h2 {
+    font-size: 10px;
+  }
+  
+  .card button {
+    font-size: 10px;
+  }
+  
+  .card p {
+    font-size: 10px;
+  }
+  
+  .card i {
+    font-size: 10px;
   }
   
   .card {
-    width: 60%; 
-    height: 30%; 
-    margin: 1rem auto; 
+    width: 80%;
   }
   
+ 
   .boxesProject {
     background-color: #191c32;
     width: 100%;
     padding-top: 3rem;
     gap: 3rem;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   
   .boxProject {
+    width: calc(33.33% - 2rem);
+    height: auto;
     position: relative;
-    width: calc(33.33% - 2rem); 
-    height: auto; 
-    margin: 1rem; 
+    margin: 1rem;
     overflow: hidden;
-    border-radius: 2rem;
+    border-radius: 20px; 
     box-shadow: 0px 5px 15px black;
     cursor: pointer;
-    border: 1px solid #00ffff;
-  }
-  
-  .boxProject figure img {
+    display: flex;
+    border: 2px solid #00ffff;
+}
+
+.boxProject img {
     width: 100%;
-    height: auto; 
+    height: 100%; 
+    object-fit: cover; 
     transition: all 500ms ease-out;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
   
   .boxProject figure .capa {
     position: absolute;
@@ -586,6 +598,7 @@ input[type="submit"]:hover {
     opacity: 0;
     visibility: hidden;
     text-align: center;
+    width: 100%;
   }
   
   .boxProject figure:hover > .capa {
@@ -593,15 +606,10 @@ input[type="submit"]:hover {
     visibility: visible;
   }
   
-  .boxProject figure:hover > .capa h3 {
-    margin-top: 50px;
-    margin-bottom: 15px;
-  }
-  
   .boxProject figure .capa h3 {
     color: #fff;
     font-weight: 400;
-    margin-bottom: 120px;
+    margin-bottom: 0;
     transition: all 500ms ease-out;
     margin-top: 2px;
     font-weight: bold;
@@ -617,80 +625,35 @@ input[type="submit"]:hover {
   }
   
 
-
   .form-group {
     width: 100%;
   }
-
+  
   .contact-section img {
     width: 100%;
     height: auto;
     margin-top: 2rem;
   }
-
+  
   .portfolio-heading h3 {
     text-align: center;
   }
   
-  .card {
-    width: 33%;
-    flex-direction: column;
-  }
-  .download-cv{
-    padding:  16px;
+  .download-cv {
+    padding: 16px;
     font-size: 14px;
     align-items: center;
-    
   }
-
+  
   .footer-content h2 {
-  text-align: center;
-  }
-}
-
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .menu {
-    width: 100%;
-  }
-
-  .main {
-    grid-template-columns: repeat(1, 1fr);
-    margin: 2rem auto;
-  }
-
-  .main img {
-    margin-left: 0;
-  }
-
-  .portfolio-heading,
-  .contact-heading {
-    padding: 3rem;
-  }
-
-  .card {
-    width: 100%;
-  }
-
-  .container_form {
-    padding: 30px;
-  }
-
-  .form-group {
-    width: 100%;
-  }
-
-  .portfolio-heading h3 {
     text-align: center;
   }
   
-  .card {
-    width: 100%;
-  }
-
-  
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+ 
+}
 
 @media screen and (min-width: 1025px) {
   .navbar {
